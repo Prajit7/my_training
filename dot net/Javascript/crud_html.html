@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="crud_oper.js"></script>
+        <title>CRUD</title>
+    </head>
+    <body>
+        <h1>List Of Fav Books</h1>
+
+
+
+        <input id="txtBook" placeholder="Enter Fav Book">
+
+        <button onclick="onAddItem()">+</button>
+        <button>X</button>
+        <button>Update</button>
+
+        <div id="">
+            <p id="pDisplay">
+                <ol id="list">
+            </p>
+        </div>
+
+        <script>
+        //Calling addItem Function with different values
+        // addItem("Name") //check wether items are adding or not
+        // addItem("SSn") //check wether items are adding or not
+        // addItem("Salary") //check wether items are adding or not
+
+        //populate without ol
+        // const populate=function(){
+        //     let p=document.getElementById("pDisplay");
+        //     p.innerHTML = "<ol type='i'>"
+        //         const data = getAll();                  
+        //     for (let i=0; i<data.length;i++){
+        //         const line = `<li type="1">${data[i]}
+                    
+        //             <a href = "#" onclick="onDelete(${i})"> Delete</a>
+
+        //             </li>`
+        //         p.innerHTML+=line;
+        //     }
+
+        // }
+
+const onDelete = function(id){
+    deleteItem(id)
+    populate()
+
+ }
+
+
+ //populate with ol
+    
+        const populate = function(){
+            let ol = document.getElementById("list");  
+            ol.innerHTML = "";
+            const data = getAll();                  
+            for (let i=0; i<data.length;i++){
+                const line = `<li type="1">${data[i]}
+                    
+                                <a href = "#" onclick="onDelete(${i})"> Delete</a>
+                                <a href = "#" onclick="onEdit(${i})"> Edit</a>         
+                           </li>`                    //To Edit
+                ol.innerHTML+=line;
+            }
+
+        }
+
+        //To edit
+        const onEdit = function(id){               
+            const newValue = prompt("New Name for the Book")
+            updateItem(id,newValue);
+            populate()
+        }
+
+        const onAddItem=function(){
+            const name=document.getElementById("txtBook").value;        //Getting Input
+            addItem(name);                                              //Pushing
+            alert("Added")
+            populate()
+        }
+
+
+        document.getElementById("pDisplay").innerText=myBooks //To display in p tag
+    </script>
+
+    </body>
+</html>

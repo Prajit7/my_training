@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="object_ba.js"> </script>
+
+        <script>
+            window.addEventListener("load",function(){   //Helps to load full page then performs the action
+            document.getElementById("id").value = obj.id;
+            document.getElementById("name").value = obj.name;
+            document.getElementById("address").value = obj.address;
+            document.getElementById("salary").value = obj.salary;
+   
+
+
+            document.getElementById("empid").value = empobj.empId;
+            document.getElementById("empname").value = empobj.empName;
+            document.getElementById("empaddress").value = empobj.empAdd;
+            document.getElementById("empsalary").value = empobj.empSalary;
+        })
+    </script>
+        <title>object and class</title>
+    </head>
+    <body>
+        <h1>Object & Class</h1>
+        <h2>Using Singleton </h2>
+        <div>
+            <p><input type="text" id="id" placeholder="ID"></p>
+            <p><input type="text" id="name" placeholder="Name"></p>
+            <p><input type="text" id="address" placeholder="Address"></p>
+            <p><input type="text" id="salary" placeholder="Salary"> </p>
+            <p>
+                <button>Save changes</button>
+                <button>Clear</button>
+            </p>
+        </div>
+        <hr>
+        <h2>Using Objects </h2>
+        <div>
+            <p><input type="text" id="empid" placeholder="ID"></p>
+            <p><input type="text" id="empname" placeholder="Name"></p>
+            <p><input type="text" id="empaddress" placeholder="Address"></p>
+            <p><input type="text" id="empsalary" placeholder="Salary"> </p>
+            <p>
+                <button>Save changes</button>
+                <button>Clear</button>
+            </p>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="repoPattern.js"></script>
+        <script>
+        function createRow(emp){
+            let row = document.createElement("tr");
+            row.innerHTML = `<td>${emp.empId}</td>
+            <td>${emp.empName}</td>
+            <td>${emp.empAdd}</td>
+            <td>${emp.empSalary}</td>
+       `;
+       return row; 
+        }
+        function populate(){
+           
+                const table = document.querySelector("#tblRecords");
+               
+                const firstRow = document.querySelector("#theading");
+                table.innerHTML = "";
+                table.appendChild(firstRow);
+                for(const emp of data){
+                    let row = createRow(emp);
+                    table.appendChild(row);
+                }
+            }
+            window.addEventListener("load", function(){
+                populate();
+            })
+
+
+        
+            //Wen user click EDIT link
+            function inEdit() {
+                const id = prompt("Enter the Id of the Employee to Edit");
+                try{
+                    const foundRec = instance.getEmployee(id)
+                    document.getElementById("txtId").value = foundRec.empId;    
+                    document.getElementById("txtName").value = foundRec.empName;    
+                    document.getElementById("txtAddress").value = foundRec.empAdd;    
+                    document.getElementById("txtSalary").value = foundRec.empSalary;    
+                }catch(ex){
+                    alert(ex);
+                }    
+            }
+            function onSaveChanges(){
+                const id = parseInt(document.getElementById("txtId").value);
+                const name = document.getElementById("txtName").value;
+                const address = document.getElementById("txtAddress").value;
+                const salary = parseFloat(document.getElementById("txtSalary").value);
+
+            const emp = new Employee(id,name,address,salary);
+            try{
+                instance.updateEmployee(emp);
+                populate()
+            }catch(error){
+                alert(error)
+            }
+            }
+
+
+            function inAdd(){
+                // let newId = prompt("Enter the Id");
+                // let newName = prompt("Enter the Name");
+                // let newAdd = prompt("Enter the Address");
+                // let newSal = prompt("Enter the Salary");
+
+                const newEmp = document.getElementById("newtxtId").value
+                const newName = document.getElementById("newtxtName").value
+                const newAdd = document.getElementById("newtxtAddress").value
+                const newSal = document.getElementById("newtxtSalary").value
+
+
+                // const emp = new Employee(newId,newName,newAdd,newSal);
+
+                const emp = new Employee(newEmp,newName,newAdd,newSal);
+
+                try{
+                instance.addEmployee(emp);
+                populate()
+            }catch(error){
+                alert(error)
+            }
+            }
+
+
+            
+    </script>
+        <title>RepoPattern</title>
+    </head>
+    <body>
+        <h1>Employee Monitorng System</h1>
+
+        <nav>
+            <a href="#" onclick="inEdit()">Edit Record</a>
+            <a href="#" onclick="inDelete()">Delete Record</a>
+            
+        </nav>
+        <hr>
+
+        <div>
+            <h2>List of Employees</h2>
+            <hr>
+            <table id="tblRecords" border="1" style="border-collapse: collapse;
+                width: 25%; text-align: center;">
+                <tr id="theading">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Details of Employee</h2>
+            <p>
+                Emp Id
+                <input id="txtId" readonly type="text">
+            </p>
+            <p>
+                Emp Name
+                <input id="txtName" type="text">
+            </p>
+            <p>
+                Emp Address
+                <input id="txtAddress" type="text">
+            </p>
+            <p>
+                Emp Salary
+                <input id="txtSalary" type="text">
+            </p>
+            <p>
+                <input type="button" value="Save Changes"
+                    onclick="onSaveChanges()">
+            </p>
+        </div>
+        <div>
+            <h2>Adding new data</h2>
+            <p>
+                Emp Id
+                <input id="newtxtId"  type="text">
+            </p>
+            <p>
+                Emp Name
+                <input id="newtxtName" type="text">
+            </p>
+            <p>
+                Emp Address
+                <input id="newtxtAddress" type="text">
+            </p>
+            <p>
+                Emp Salary
+                <input id="newtxtSalary" type="text">
+            </p>
+            <p>
+                <input type="button" value="Add"
+                onclick="inAdd()">
+                <!-- <a href="#" onclick="inAdd()">Add Record</a> -->
+            </p>
+        </div>
+
+    </body>
+</html>

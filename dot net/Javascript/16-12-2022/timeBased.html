@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // function display(){
+        //     const curr = new Date()
+        //         const hr = curr.getHours();
+        //         const min = curr.getMinutes();
+        //         const sec = curr.getSeconds();
+        //         const strContent = `<b>${hr}:${min}:${sec}`;
+        //             document.getElementById("lbl").innerHTML = strContent;
+        //     }
+        
+        // function onSetInterval(){
+        //     setInterval(display,1000)
+                
+        // }
+        // function onSetTimeoutFunc(){
+        //     setTimeout(( ) => {
+        //         alert("Time for Lunch Break!!!!")
+        //     }, 2000);
+        // }
+        function displayTime(){
+            const currentDt = new Date();
+            const hr = currentDt.getHours();
+            const min = currentDt.getMinutes();
+            const sec = currentDt.getSeconds();
+            const content = `<b>${hr}:${min}:${sec}</b>`;
+            document.getElementById("lbl").innerHTML = content;
+        }
+        
+        function onSetInterval() {
+            setInterval(displayTime,1000);
+        }
+
+        function onSetTimeout(){
+            setTimeout(() => {
+                alert("Time for Lunch Break!!!!")
+            }, 2000);
+        }
+
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>Time bound Methods</h1>
+    <hr>
+    <ul>
+        <li>setTimeout: used to call a function after a specified period of time in milli second</li>
+        <li>setInterval: used to call same function everytime after the span of the interval in milli second</li>
+    </ul>
+    <p><label id="lbl" ></label></p>
+    <button onclick="onSetTimeout()">setTimeout</button>
+    <button onclick="onSetInterval()">setInterval</button>
+</body>
+</html>

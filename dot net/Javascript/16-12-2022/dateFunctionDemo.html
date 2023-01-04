@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+        function createDate(){
+            year = prompt("Enter the year")
+            month = prompt("Enter the month representing 0 as Jan and 11 as Dec")
+            date = parseInt(prompt("Enter date"))
+            
+            return new Date(year,month,date);
+       
+        }
+
+        function displayDate(selectDate){
+            const d = new Date(selectDate);
+            const date1 = d.getDate()
+            const month1 = d.getMonth()
+            const year1 = d.getFullYear()
+            // console.log(o)
+            document.getElementById("p1").innerText = date1;
+            document.getElementById("p2").innerText = month1;
+            document.getElementById("p3").innerText = year1;
+
+
+        }
+
+
+
+
+        function showDate()
+ {
+
+            alert(new Date())
+            alert(new Date(1980,11,02))
+            alert(new Date("12/12/2007"))
+            const selectDate = createDate()
+            const dis = displayDate(selectDate)
+            document.getElementById("pDisplay").innerText = selectDate;
+            // const selectedDate= new Date(document.getElementById("txtDate").value);
+            // displayDate(selectedDate);
+
+
+        }
+    </script>
+    </head>
+    <body>
+
+        <h1>Date and time function</h1>
+        <hr>
+        <div>
+            <button onclick="showDate()">Show date
+
+            </button>
+
+            <li>Date is javascript object</li>
+            <li>it has date month year and times</li>
+            <p id="pDisplay"></p>
+
+            <p id="p1"> </p>
+            <p id="p2"> </p>
+            <p id="p3"> </p>
+        </div>
+    </body>
+</html>

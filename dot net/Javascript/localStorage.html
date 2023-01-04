@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Storage</title>
+        <script>
+function onSave(){
+    if(!localStorage){
+        alert("Browser dont support");
+        return
+    }
+    const value = document.getElementById("txtData").value;
+    localStorage.setItem("someName",value);
+}
+function onRetriveData(){
+    if(localStorage.getItem("someName")==null){
+        alert("No Data");
+        return;
+    }
+    document.getElementById("pDisplay").innerText = localStorage.getItem("someName");
+}
+
+function onSaveChange(){
+    const emp = {};
+    emp.empId = document.getElementById("txtId").value;
+    emp.empName = document.getElementById("txtName").value;
+    emp.empAdd = document.getElementById("txtAddress").value;
+    emp.empSal = document.getElementById("txtSalary").value;
+
+
+
+
+
+    const jsonData = JSON.stringify(emp);
+    localStorage.setItem("empRecord",jsonData);
+
+}
+
+        </script>
+    </head>
+    <body>
+        <h1>Local Storage JavaScript</h1>
+        <hr>
+        <div>
+            <p>
+                Enter the sample text
+                <input type="text" id="txtData">
+                <button onclick="onSave()">Save</button>
+            </p>
+
+        </div>
+        <div>
+            <button onclick="onRetriveData()">Click to view data</button>
+            <p id="pDisplay"></p>
+        </div>
+
+
+        <div>
+            <h1>Object in Local Storage</h1>
+            <hr>
+            <p>
+                Emp Id
+                <input id="txtId"  type="text">
+            </p>
+            <p>
+                Emp Name
+                <input id="txtName" type="text">
+            </p>
+            <p>
+                Emp Address
+                <input id="txtAddress" type="text">
+            </p>
+            <p>
+                Emp Salary
+                <input id="txtSalary" type="text">
+            </p>
+            <p>
+                <button onclick="onSaveChange()">Save</button>
+                
+    </body>
+</html>
