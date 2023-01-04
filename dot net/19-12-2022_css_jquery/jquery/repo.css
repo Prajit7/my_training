@@ -1,0 +1,24 @@
+body{
+    background-color: antiquewhite;
+    color: black;
+}
+h1{
+    padding: 50px;
+    background-color: rgb(153, 229, 229);
+    font-size: 34pt;
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+li,a{
+    display: inline-block;
+    background-color: rgb(163, 103, 30);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+a:hover{
+    background-color: aqua;
+    color: violet;
+}

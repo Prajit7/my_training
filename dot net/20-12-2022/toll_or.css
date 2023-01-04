@@ -1,0 +1,28 @@
+*{
+    background-color: antiquewhite;
+}
+#head{
+    text-align: center;
+    color: coral;
+}
+/* nav{
+    display: inline-flex;
+
+} */
+.btn1,.btn2{
+    font-size: 25px;
+}
+.btn1:hover,.btn2:hover{
+    background-color: cornflowerblue;
+    color: aqua;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: beige;
+  }
+  
+  th, td {
+    padding: 15px;
+    font-size: 20px;
+  }

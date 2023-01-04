@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .static{
+            position: static;
+            border: 2px solid rgb(139, 86, 15);
+            padding: 50px;
+        }
+        .fixed{
+            bottom: 10px;
+            position: fixed;
+            border: 2px solid rgb(139, 86, 15);
+            width: 100%;
+            text-align: center;
+
+        }
+        .relative{
+            left: 50px;
+            position: relative;
+            border: 2px solid rgb(139, 86, 15);
+        }
+        .absolute{
+            position: absolute;
+            border: 2px solid rgb(218, 204, 186);
+            top: 70%;
+      
+        }
+        .sticky{
+            position: sticky;
+            border: 2px solid rgb(218, 204, 186);
+        }
+    </style>
+</head>
+<body>
+    <div class="static">
+        <p>Static position</p>
+    </div>
+    <div class="static">
+        <p>Static position</p>
+    </div>
+    <div class="static">
+        <p>Static position</p>
+    </div>
+    <div class="static">
+        <p>Static position</p>
+    </div>
+    <div class="fixed">
+        <p>Fixed position</p>
+    </div>
+    <div class="relative">
+        <p>Relative position</p>
+        <div class="absolute">
+            <p>Absolute:content will be placed  on the parent</p>
+        </div>
+    </div>
+    
+    <div class="sticky">
+        <p>sticky</p>
+    </div>
+    
+</body>
+</html>

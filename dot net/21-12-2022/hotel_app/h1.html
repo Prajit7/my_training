@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.2.min.js"></script>
+    <script src="h.js"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="jquery-3.6.2.min.js"></script>
+    <script>
+        $().ready(function(){
+       
+
+            $("#login-form").submit(function () {
+        let enteredName=$("#userName").val()
+        let enteredPass=$("#userPwd").val()
+        let storedName = localStorage.getItem("username");
+        let storedPass = localStorage.getItem("password");
+
+        if (enteredName == storedName && enteredPass == storedPass) {
+          alert("welcome "+enteredName);
+        }
+        else {
+          alert("Username and Password do not match!");
+        }
+        // const name=enteredName
+        // $("#name").html(name)
+      });
+
+      $("#registerUser").submit(function () {
+        let newUser = $("#txtName").val();
+        let newPass = $("#txtPwd").val()
+        let newNum = $("#txtNumber").val();
+
+        localStorage.setItem("username",newUser)
+        localStorage.setItem("password",newPass)
+        localStorage.setItem("phoneno",newNum)
+      
+      });
+      function verify(){
+            const name = $("#name").val()
+            const city = $("#city").val()
+            // console.log(localStorage.getItem(name));
+            if(name === localStorage.getItem(name)){
+                alert("correct")
+            }else{
+                alert("wrong")
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            $("#Masala_Dosa").click(function(){
+                const dosa=$("#Masala_Dosa").val()
+                const no = $("#masaladosa").val()
+                addFood(dosa)
+                $("button:first").click($("#pDisp").html("Food Added"))
+                
+            })
+
+            $("#Idli").click(function(){
+
+                const idli=$("#idli").val()
+                addFood(idli)
+            })
+            $("#uppit").click(function(){
+
+                const uppit=$("#uppit").val()
+                addFood(uppit)
+})
+                
+
+                // addVehicle(foundType)
+                // if(type == "Car")
+                // $("#in").html("60")
+                // console.log(data)
+
+                
+                
+
+          
+
+            $("#btn2").click(function(){
+
+                $("table").find("tr:gt(0)").remove();
+
+                let key1 = null
+
+                const table=[]
+                for (const key of data.keys()) {
+                    key1 = key
+                    obj = {}
+                    obj.vehicalType = key
+                    obj.vehicalCount = data.get(key) 
+                    obj.TotalAmount = getdetails(key)
+                    table.push(obj)
+
+                }
+                //console.log(table)
+                const value = table.find((e)=> e.vehicalType == key1)
+                const tr =`<tr>
+                    <td>${value.vehicalType}</td>
+                    <td>${value.TotalAmount}</td>
+                    </tr>`;
+
+
+                    $("#tbl").append(tr)
+            })
+            $("#demo").click(function() {
+
+    var x = document.getElementById("demo");
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+  function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+    
+})
+
+
+
+            // function fillData(table){
+
+            // }
+
+        })
+    </script>
+</head>
+<body>
+    <button id="demo">Location</button>
+    <h1 style="text-align:center ;">Resturant System</h1>
+    <hr>
+    <h2>Login Page</h2>
+        <form id="login-form"> 
+           Name <input id="userName" type="text"  />
+          Password  <input id="userPwd" type="password" />
+            <input id="butLogin" type="submit" value="Login" /> 
+       </form>
+    </div>
+    <div>
+        <h2>Registration Page</h2>
+        <hr>
+        <form id="registerUser" style="align-content: center;"> 
+            <p>User Name :<input id="txtName" type="text" /></p>
+            <p>Password :<input id="txtPwd" type="password"/></p>
+            <p>Phone Number :<input id="txtNumber" type="number" placeholder="Enter Number"/></p>
+            <p><input id="butRegister" type="submit" value="Register" /> </p>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h3>Select the Food Item</h3>
+
+    <div style="display: inline-flex;">
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Masala Dosa </p>
+        <p>Rs. 50</p>
+        <button id="Masala_Dosa" value="masala dosa">Add Item</button>
+
+    </div>
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Idli</p>
+        <p>Rs. 40</p>
+
+        <button id="Idli" value="idli">Add Item</button>
+    </div>
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Uppit</p>
+        <p>Rs. 25</p>
+    
+        <button id="uppit" value="uppit">Add Item</button>
+    </div>
+</div>
+        
+    </div>
+        <div>
+            <!-- <button id="btn1">Add Vehicle</button> -->
+
+            <button id="btn2">Calculate</button>
+            <p id="in"></p>
+            <p id="pDisp"></p>
+        </div>
+        <div>
+                <h2 style="text-align:center ;">Records</h2>
+            <hr>
+            <table id="tbl" border="1">
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                </tr>
+            </table>
+             
+        </div>
+
+</body>
+</html>

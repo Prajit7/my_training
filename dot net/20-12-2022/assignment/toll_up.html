@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="toll_up.js"></script>
+    <script src="jquery-3.6.2.min.js"></script>
+    <script>
+        $().ready(function(){
+            $("button:first").click(function(){
+                const type=$("#Type").val()
+                addVehicle(type)
+                console.log(data)
+                $("#pDisp").html("Vehicle Added")
+
+            })
+            $("button:last").click(function(){
+                let key1 = null
+                const table=[]
+                for (const key of data.keys()) {
+                    key1 = key
+                    obj = {}
+                    obj.vehicalType = key
+                    obj.vehicalCount = data.get(key) 
+                    obj.TotalAmount = getdetails(key)
+                    table.push(obj)
+                }
+                //console.log(table)
+                const value = table.find((e)=> e.vehicalType == key1)
+                const tr =`<tr>
+                    <td>${value.vehicalType}</td>
+                    <td>${value.TotalAmount}</td>
+                    </tr>`
+                
+                    $("table").append(tr)
+            })
+
+
+            // function fillData(table){
+
+            // }
+
+        })
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center ;">Toll Plaza</h1>
+    <hr>
+    <div>
+        <select  id="Type">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Truck">Truck</option>
+        </select>
+        <div>
+            <button>Add Vehicle</button>
+
+            <button>Calculate</button>
+            <p id="pDisp"></p>
+        </div>
+        <div>
+                <h2 style="text-align:center ;">Records</h2>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th>Type</th>
+                    <th>Amount</th>
+                </tr>
+            </table>
+             
+        </div>
+    </div>
+</body>
+</html>

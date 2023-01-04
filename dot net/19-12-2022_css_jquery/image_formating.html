@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .polaroid{
+            width: 100%;
+            background-color: aliceblue;
+            box-shadow: 0 4px 8px 0 lemonchiffon;
+            margin-bottom: 25px;
+        }
+        .container{
+            padding: 10px;
+            text-align: center;
+            
+        }
+        .abs1 {
+            margin: 3%;
+            position: relative;
+        }
+
+
+        .inner_txt {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="css_basic_inline.html">Basic</a></li>
+            <li><a href="css_internal.html">Internal CSS</a></li>
+            <li><a href="css_external.html">External CSS</a></li>
+            <li> <a href="textFormating.html">TextFormating</a></li>
+            <li><a href="imageFormating">ImageFormating</a></li>
+        </ul>
+    </nav>
+    <h1>Image Formatting</h1>
+    <div >
+        <img id="card" src="abc.jfif" alt="">
+        <img src="abc.jfif" alt="" id="sample">
+        <!-- <h3 class="absolute">flower text on left</h3> -->
+    </div>
+    <div>
+        <div class="polaroid">
+            <img src="abc.jfif" alt="">
+            <div class="container">
+                <p>Flower</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A excepturi velit similique, blanditiis eaque voluptate. Veritatis incidunt minus porro, distinctio nostrum error perferendis, expedita mollitia, non at veniam! Porro, facilis laudantium illo aliquam beatae modi nisi quo! Aut, quod facere.</p>
+            </div>
+        </div>
+    </div>
+    <h2>Reflection</h2>
+    <div>
+        <img src="abc.jfif" style="-webkit-box-reflect: right "  alt="">
+        <!-- <h3 class="abs">left side</h3> -->
+        
+    </div>  
+    <div class="abs1">
+        <img src="abc.jfif">
+        <h3 class="inner_txt"> left side</h3>
+
+</body>
+</html>

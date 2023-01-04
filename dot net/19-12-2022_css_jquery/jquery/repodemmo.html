@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="repo.css">
+    <script src="jquery-3.6.2.min.js"></script>
+    <script src="repodemmo.js"></script>
+    <script>
+        const expRepo = new ExpenseManager();
+        function createData(){
+            expRepo.addNewExpense(new Expense("Food at cafe", 100, new Date(2022, 11, 13)))
+            expRepo.addNewExpense(new Expense("Brunch at cafe", 120, new Date(2022, 10, 23)))
+            expRepo.addNewExpense(new Expense("Coffee at cafe", 10, new Date(2022, 11, 11)))
+            expRepo.addNewExpense(new Expense("Tea at hotel", 10, new Date(2022, 11, 12)))
+        }
+        function dateString(date){
+            return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+        }
+        function populateData(data){
+            $.each(data, (index, item)=>{
+              const row = `<tr>
+                    <td>${item.id}</td>
+                    <td>${item.detail}</td>
+                    <td>${item.amount}</td>
+                    <td>${dateString(item.date)}</td>
+                     `;
+               $("table").append(row);        
+            })
+        }
+        function onDisplayTable() {
+            $(".container").children("div").hide();
+            $(".container").children("div:first").show(2000);
+            const data = expRepo.getAllExpenses();
+            populateData(data);
+        }
+        function onDisplayNewExpense() {
+            $(".container").children("div").hide();
+            $(".container > div:last").show(2000);
+        }
+        function onFindExpenseByDate() {
+            $(".container").children("div").hide();
+            $(".container > div:first").next().show(2000);
+        }
+
+        function onFindExpenseByDetail() {
+            alert("find by detail")
+        }
+        function init(){
+            createData();
+            $("div.container").children("div").hide();
+            $("a:first").click(onDisplayTable)
+            $("a:eq(1)").click(onDisplayNewExpense)
+            $("ul>li:eq(2)>a").click(onFindExpenseByDate);
+            $("ul>li:eq(3)>a").click(onFindExpenseByDetail);
+        }
+        $().ready(init)
+    </script>
+</head>
+<body>
+    <h1>Expense Manager Software</h1>
+    <nav style="text-align: center">
+        <ul>
+            <li><a href="#">View All Expenses</a></li>
+            <li><a href="#">Add New Expense</a></li>
+            <li><a href="#">Find Expense By Date</a></li>
+            <li><a href="#">Find Expense By Detail</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <div class="container">
+        <div>
+            <h2>Table of Records</h2>
+            <hr>
+            <table border="1">
+                <tr>
+                    <th>ExpenseID</th>
+                    <th>Expense Detail</th>
+                    <th>Expense Amount</th>
+                    <th>Date of Expense</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2>Details of the Expense</h2>
+            <hr>
+        </div>
+        <div>
+            <h2>Add New Expense</h2>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

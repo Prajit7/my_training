@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.2.min.js"></script>
+    <script>
+        $().ready(function(){
+            $("#pDisplay").fadeToggle(2000);
+            $("button").click(function(event){
+                event.preventDefault();
+                const obj = {};
+                obj.name = $("#txtName").val();
+                obj.email = $("#txtEmail").val();
+                obj.salary = $("#txtSalary").val();
+                $("#pDisplay").text(JSON.stringify(obj));
+                $("#pDisplay").fadeToggle(2000);
+            })
+        });
+        // $().ready(function(){
+        //     $("div:first").slideUp(2000);
+        //     $("a").click(function(){
+        //         $("div:first").slideDown(2000);
+        //     })
+        //     $("div:last").fadeToggle(2000);
+        //     $("button").click(function(event){
+        //         event.preventDefault();
+        //         const obj = {};
+        //         obj.name = $("#txtName").val();
+        //         obj.email = $("#txtEmail").val();
+        //         obj.salary = $("#txtSalary").val();
+        //         $("div:eq(1)").text(JSON.stringify(obj));
+        //         $("div:eq(1)").fadeToggle(2000);
+        //     })
+        // });
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>
+           User Registration
+        </h1>
+        <hr>
+        <form >
+            <p>
+           
+                Name: <input type="text" id="txtName" required>
+            </p>
+            <p>
+                Email: <input type="email" id="txtEmail">
+            </p>
+            <p>
+                Salary: <input type="number" min="20000" max="1000000" id="txtSalary">
+            </p>
+            <p>
+                <button type="submit">Display Details</button>
+            </p>
+        </form>
+
+
+       
+    </div>
+    <div class="pDisplay">
+
+    </div>
+</body>
+</html>

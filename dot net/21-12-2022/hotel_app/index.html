@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="food.js"></script>
+        <script src="jquery-3.6.2.min.js"></script>
+        <script>
+        //  $().ready(function(){
+        //     $("button:first").click(function(){
+        //         // let rs = 60;
+        //         // let no = parseInt($("#item1").val)
+        //         // result = rs * no;
+        //         // console.log(result)
+                
+
+        //     })
+
+        //  })
+
+        $(document).ready(function () {
+            // $("div").hide()
+            $("nav>a:first").click(function(){
+                $("div").hide()
+                $("div:eq(1)").show(2000)
+            })
+            $("nav>a:eq(1)").click(function(){
+                // $("div").hide()
+                $("div:first").show(2000)
+            })
+      $("#login-form").submit(function () {
+        let enteredName=$("#userName").val()
+        let enteredPass=$("#userPwd").val()
+        let storedName = localStorage.getItem("username");
+        let storedPass = localStorage.getItem("password");
+
+        if (enteredName == storedName && enteredPass == storedPass) {
+          alert("welcome "+enteredName);
+        }
+        else {
+          alert("Username and Password do not match!");
+        }
+        // const name=enteredName
+        // $("#name").html(name)
+      });
+
+      $("#registerUser").submit(function () {
+        let newUser = $("#txtName").val();
+        let newPass = $("#txtPwd").val()
+        let newNum = $("#txtNumber").val();
+
+        localStorage.setItem("username",newUser)
+        localStorage.setItem("password",newPass)
+        localStorage.setItem("phoneno",newNum)
+      
+      });
+      function verify(){
+            const name = $("#name").val()
+            const city = $("#city").val()
+            // console.log(localStorage.getItem(name));
+            if(name === localStorage.getItem(name)){
+                alert("correct")
+            }else{
+                alert("wrong")
+            }
+        }
+        const obj1= new details();
+
+        function addDetails(){
+
+            const quantity = $("#quantity").val()
+            const food1 = $("#select").val()
+
+        const newObj = new food(food1,quantity)
+        obj1.addNewExpense(newObj)
+        console.log(obj1)
+
+        alert("Added")
+
+        }
+
+
+    });
+        localStorage.setItem("shri", "bangalore");
+        localStorage.setItem("prajit", "belgaum");
+
+
+        // function verify(){
+        //     const name = $("#name").val()
+        //     const city = $("#city").val()
+        //     // console.log(localStorage.getItem(name));
+        //     if(name === localStorage.getItem(name)){
+        //         alert("correct")
+        //     }else{
+        //         alert("wrong")
+        //     }
+        // }
+        // const obj1= new details();
+
+        // function addDetails(){
+
+        //     const quantity = $("#quantity").val()
+        //     const food1 = $("#select").val()
+
+        // const newObj = new food(food1,quantity)
+        // obj1.addNewExpense(newObj)
+        // console.log(obj1)
+
+        // alert("Added")
+
+        // }
+
+
+        // function init(){
+        //     $("#sub").click(addDetails)
+        //     $("#ver").click(verify)
+
+        // }
+
+        // $().ready(init)
+
+
+
+    </script>
+    </head>
+    <body>
+         <!-- <div>
+            <h2>Login Details</h2>
+            Name: <input id="name" type="text">
+            password: <input id="city" type="text">
+            <button id="ver">Submit</button>
+
+        </div> -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Location</a></li>
+
+            </ul> 
+        </nav>
+        <nav>
+            <a href="#">New User</a>
+            <a href="#">Log In</a>
+    </nav>
+    <div>
+     <h2>Login Page</h2>
+        <form id="login-form"> 
+           Name <input id="userName" type="text"  />
+          Password  <input id="userPwd" type="password" />
+            <input id="butLogin" type="submit" value="Login" /> 
+       </form>
+    </div>
+    <div>
+        <h2>Registration Page</h2>
+        <hr>
+        <form id="registerUser" style="align-content: center;"> 
+            <p>User Name :<input id="txtName" type="text" /></p>
+            <p>Password :<input id="txtPwd" type="password"/></p>
+            <p>Phone Number :<input id="txtNumber" type="number" placeholder="Enter Number"/></p>
+            <p><input id="butRegister" type="submit" value="Register" /> </p>
+        </form>
+    </div>
+    <div>
+   
+
+    </div> 
+
+
+        <div style="display: inline-flex;">
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Masala Dosa</p>
+        <input id="item1" type="number">
+        <button id="sub">Add to Cart</button>
+    </div>
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Masala Dosa</p>
+        <input type="number">
+        <button>Add to Cart</button>
+    </div>
+    <div>
+        <img src="images.jfif" alt="">
+        <p>Masala Dosa</p>
+        <input type="number">
+        <button>Add to cart</button>
+    </div>
+</div>
+        <!-- <div>
+            <select   id="Type">
+                <option value="dosa">Dosa</option>
+                <option value="vada">vada</option>
+                <option value="uppit">uppit</option>
+            </select>
+            Quantity: <input type="number" id="quantity">
+            <button id="sub">Submit</button>
+
+        </div> -->
+
+    </body>
+</html>

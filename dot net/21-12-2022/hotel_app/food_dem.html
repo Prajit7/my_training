@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.6.2.min.js"></script>
+    <script src="./order.js"></script>
+    <script>
+         $(document).ready(function () {
+            $("div").hide()
+            $("nav>a:first").click(function(){
+                $("div").hide()
+                $("div:eq(1)").show(2000)
+            })
+            $("nav>a:eq(1)").click(function(){
+                $("div").hide()
+                $("div:first").show(2000)
+            })
+      $("#login-form").submit(function () {
+        let enteredName=$("#userName").val()
+        let enteredPass=$("#userPwd").val()
+        let storedName = localStorage.getItem("username");
+        let storedPass = localStorage.getItem("password");
+
+        if (enteredName == storedName && enteredPass == storedPass) {
+          alert("welcome "+enteredName);
+        }
+        else {
+          alert("Username and Password do not match!");
+        }
+        // const name=enteredName
+        // $("#name").html(name)
+      });
+
+      $("#registerUser").submit(function () {
+        let newUser = $("#txtName").val();
+        let newPass = $("#txtPwd").val()
+        let newNum = $("#txtNumber").val();
+        let newAdd = $("#txtAddress").val();
+        localStorage.setItem("username",newUser)
+        localStorage.setItem("password",newPass)
+        localStorage.setItem("phoneno",newNum)
+        localStorage.setItem("Address",newAdd)
+      });
+
+    });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Online Food Ordering</h1>
+    <nav>
+            <a href="#">New User</a>
+            <a href="#">Log In</a>
+    </nav>
+    <div>
+        <h2>Login Page</h2>
+        <form id="login-form"> 
+            <input id="userName" type="text" placeholder="Enter Username" />
+            <input id="userPwd" type="password" placeholder="Enter Password" />
+            <input id="butLogin" type="submit" value="Login" /> 
+       </form>
+    </div>
+    <div>
+        <h2>Registration Page</h2>
+        <hr>
+        <form id="registerUser" style="align-content: center;"> 
+            <p>User Name :<input id="txtName" type="text" placeholder="Name"/></p>
+            <p>Password :<input id="txtPwd" type="password" placeholder="Password"/></p>
+            <p>Phone Number :<input id="txtNumber" type="number" placeholder="Enter Number"/></p>
+            <p>Address :<input id="txtAddress" type="text" placeholder="Enter Address" ></p>
+            <p><input id="butRegister" type="submit" value="Register" /> </p>
+        </form>
+    </div>
+    <div>
+    
+
+    </div>
+
+</body>
+</html>

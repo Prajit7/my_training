@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="toll.js"></script>
+    <link rel="stylesheet" href="toll.css">
+    <script src="jquery-3.6.2.min.js"></script>
+    <script>
+        $().ready(function(){
+            $("select").click(function(){
+                const type=$("#Type").val()
+                if(type == "Car"){
+                $("#in").html("Toll Amount:60")
+                }else if(type == "Bike"){
+                    $("#in").html("Toll Amount:40")
+                }else if(type == "Truck"){
+                    $("#in").html("Toll Amount:100")
+                }
+            })
+            $("button:first").click(function(){
+                const type=$("#Type").val()
+                addVehicle(type)
+                // if(type == "Car")
+                // $("#in").html("60")
+                // console.log(data)
+
+                $("#pDisp").html("Vehicle Added")
+                
+
+            })
+
+            $("button:last").click(function(){
+
+                $("table").find("tr:gt(0)").remove();
+
+                let key1 = null
+
+                const table=[]
+                for (const key of data.keys()) {
+                    key1 = key
+                    obj = {}
+                    obj.vehicalType = key
+                    obj.vehicalCount = data.get(key) 
+                    obj.TotalAmount = getdetails(key)
+                    table.push(obj)
+
+                }
+                //console.log(table)
+
+
+                for (const ky of table) {
+                  
+                  const tr =`<tr>
+                  <td>${ky.vehicalType}</td>
+                  <td>${ky.vehicalCount}</td>
+                  <td>${ky.TotalAmount}</td>
+                  </tr>`
+                  $("#tbl").append(tr)
+                }
+
+                // const value = table.find((e)=> e.vehicalType == key1)
+                // const tr =`<tr>
+                //     <td>${value.vehicalType}</td>
+                //     <td>${value.TotalAmount}</td>
+                //     </tr>`;
+                    
+
+
+                    $("#tbl").append(tr)
+            })
+
+
+            // function fillData(table){
+
+            // }
+
+        })
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center ;">Toll Plaza</h1>
+    <hr>
+    <div>
+        <h3>Please Select the Vechicle Type</h3>
+        <p>
+            <!-- <select  id="way">
+            <option value="One Way">One Way</option>
+            <option value="Two Way"> Two Way</option>
+        </select> -->
+        <select   id="Type">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Truck">Truck</option>
+        </select>
+    </p>
+        
+    </div>
+        <div>
+            <button id="btn1">Add Vehicle</button>
+
+            <button id="btn2">Show Details</button>
+            <p id="in"></p>
+            <p id="pDisp"></p>
+        </div>
+        <div>
+                <h2 style="text-align:center ;">Records</h2>
+            <hr>
+            <table id="tbl" border="1">
+                <tr>
+                    <th>Type</th>
+                    <th>Number</th>
+                    <th>Amount</th>
+                </tr>
+            </table>
+             
+        </div>
+
+</body>
+</html>

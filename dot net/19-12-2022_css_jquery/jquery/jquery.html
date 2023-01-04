@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-3.6.2.min.js"></script>
+        <style>
+            div{
+                background-color: antiquewhite;
+                border: 2px solid black;
+                width: 250px;
+                height: 200px;
+                display: inline-block;
+                margin: 4px;
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+    //         jQuery(document).ready(function(){
+    //     alert("Ready!!!")
+    // }); or
+    // $().ready(function(){
+    //     alert("Ready")
+    // });or
+
+    const fun = function(){
+        $("div").click(function(){
+            $(this).css("background-color","red")
+        });
+
+        $("div").mouseover(function(){
+            $(this).css("font-size","40pt")
+        }).mouseleave(function(){
+            $(this).css("font-size","18pt")
+        })
+        $("div").hide(3000);
+        //to get div back
+        $("a").click(function(){
+            $("div").show(3000);
+        })
+        // $().ready(function(){
+        //     $("p").click(function(){
+        //         $("p").hide(2000)
+        //     })
+        // })
+//         $(document).ready(function(){
+//    $("h1").click(function(){
+//      $("h1").hide();
+//   });
+//  })
+        console.log("Ready")
+    }
+    $().ready(fun);
+    </script>
+        <nav>
+            <a href="#">Display All</a>
+        </nav>
+        <div>
+            <p>div 1</p>
+        </div>
+        <div>
+            <p>div 2</p>
+        </div>
+        <div>
+            <p>div 3</p>
+        </div>
+        <h1>Prajit</h1>
+    </body>
+</html>
