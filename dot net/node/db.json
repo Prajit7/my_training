@@ -1,0 +1,70 @@
+{
+  "Books": [
+    {
+      "id": 1,
+      "bookTitle": "Atomic Habit",
+      "price": 450,
+      "author": "James Clever"
+    },
+    {
+      "id": 2,
+      "bookTitle": "Lifes Amazing Secrete",
+      "price": 450,
+      "author": "Gopal Das"
+    },
+    {
+      "id": 3,
+      "bookTitle": "Karma",
+      "price": 450,
+      "author": "Sadhaguru"
+    },
+    {
+      "id": 4,
+      "bookTitle": "ikagai",
+      "price": 450,
+      "author": "James Clever"
+    },
+    {
+      "id": 5,
+      "bookTitle": "The Tale of 2 cities",
+      "price": 450,
+      "author": "James Clever"
+    },
+    {
+      "id": 6,
+      "bookTitle": "the psychology of money",
+      "price": 450,
+      "author": "Morgan Housel"
+    },
+    {
+      "id": 7,
+      "bookTitle": "Lord of the Rings",
+      "price": 450,
+      "author": "J.R.R. Tolkien."
+    },
+    {
+      "id": 8,
+      "bookTitle": "Crime",
+      "price": 450,
+      "author": "James Clever"
+    },
+    {
+      "bookTitle": "Tragedy",
+      "author": "James Clever",
+      "price": "4500000",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "bookTitle": "Fable",
+      "price": 450,
+      "author": "James Clever"
+    },
+    {
+      "bookTitle": "atomic",
+      "author": "james",
+      "price": "10000",
+      "id": "11"
+    }
+  ]
+}

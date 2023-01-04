@@ -1,0 +1,394 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.6.2.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .jumbotron{
+            padding: 50px;
+            margin: 25px;
+            color: chartreuse;
+            background-color: azure;
+            text-align: center;
+
+        }
+    </style>
+<script>
+    const url = "http://localhost:3000/Books"
+
+    function createRow(book){
+        const row = `<tr>
+            <td>${book.id}</td>
+            <td>${book.bookTitle}</td>
+            <td>${book.price}</td>
+            <td>${book.author}</td>
+            <td> <a class="edit" info="${book.id}"/>Edit</td>
+            </tr>`
+            return row;
+    }
+
+
+
+
+
+    function getAllRecords(){
+        $("table").find("tr:gt(0)").remove();
+        $.get(url,function(data){
+            for(const bk of data){
+                let row = createRow(bk)
+                $("table").append(row);
+            }
+            $(".edit").click(function(){
+                const id = $(this).attr("info");
+                // alert(id)
+                displayAll(id);
+            })
+           
+        })
+    }
+    function displayAll(id){
+        const tempUrl = `${url}/${id}`
+        $.get(tempUrl,(foundBook)=>{
+        $("#bookOldId").val(foundBook.id);
+        $("#bookOldTitle").val(foundBook.bookTitle);
+        $("#bookOldPrice").val(foundBook.price);
+        $("#bookOldAuthor").val(foundBook.author);
+
+
+    
+      
+        })
+
+
+    }
+   function upd(){
+    // alert("click")
+                const obj = {};
+               
+                obj.id =  $("#bookOldId").val();
+                obj.bookTitle = $("#bookOldTitle").val();
+                obj.price = $("#bookOldPrice").val();
+                obj.author = $("#bookOldAuthor").val();
+                const tempUrl =`${url}"/"${obj.id}`
+                $.ajax({
+                    "method":"PUT",
+                    "url":tempUrl,
+                    "data" : obj,
+                    "success" : function(result){
+                        alert("Added");
+                    }
+                })
+            }
+            
+        
+    
+
+    
+   function addRecord(){
+                const obj = {}
+
+                obj.id =$("#bookId").val();
+                obj.bookTitle =$("#bookTitle").val();
+                obj.price =$("#bookPrice").val();
+                obj.author =$("#bookAuthor").val() ;
+               
+                $.post(url,obj,function(data){
+            
+                    const msg = `The Book ${data.bookTitle} is added`
+                    alert(msg)
+                    getAllRecords()
+
+                })
+            }
+
+    $().ready(function(){
+        $("a.btn:first").click(getAllRecords)
+        $("#btnAdd").click(addRecord)
+        $("#btnUpdate").click(upd)
+        // getAllRecords()
+       
+    
+        
+    })
+
+
+
+</script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="jumbotron">Book store App!</h1>
+    <hr>
+
+<nav class="nav nav-bar">
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+        <a href="#" class="btn btn-info m-3 p-3">All Records</a>
+        
+    </li>
+</ul>
+</nav>
+    <div class="container container-fluid text-primary">
+        <div class="row">
+            <div class="col-md-6">
+                    <header>
+                            <h2 class="h2">Books with Us!!!</h2>
+                            <hr>
+                        </header>
+                        <div>
+                            <table class="table table-bordered table-striped table-hover" border="1">
+                                <tr>
+                                    <th>Book ID</th>
+                                    <th>Title</th>
+                                    <th>Cost</th>
+                                    <th>Author</th>
+                                    <th>Options</th>
+                                </tr>
+                            </table>
+                        </div>     
+            </div>
+            <div class="col-md-6">
+                    <header>
+                            <h2> Update Book</h2>
+                            <hr>
+                        </header>
+                        <div>
+                            <p>
+                                Enter the ID: <input disabled id="bookOldId"  placeholder="ID of the Book" />
+                            </p>
+                            <p>
+                                Enter the Title: <input id="bookOldTitle" placeholder="Title" />
+                            </p>
+                            <p>
+                                Enter the Author: <input id="bookOldAuthor" placeholder="Author" />
+                            </p>
+                            <p>
+                                Enter the Price: <input id="bookOldPrice" placeholder="Price" />
+                            </p>
+                            <p>
+                                <button id="btnUpdate" class="btn btn-primary">Update Book</button>
+                            </p>
+                        </div>
+
+                        <div>
+                            <header>
+                                    <h2> Add New Book</h2>
+                                    <hr>
+                                </header>
+                                <div>
+                                    <p>
+                                        Enter the ID: <input  id="bookId"  placeholder="ID of the Book" />
+                                    </p>
+                                    <p>
+                                        Enter the Title: <input id="bookTitle" placeholder="Title" />
+                                    </p>
+                                    <p>
+                                        Enter the Author: <input id="bookAuthor" placeholder="Author" />
+                                    </p>
+                                    <p>
+                                        Enter the Price: <input id="bookPrice" placeholder="Price" />
+                                    </p>
+                                    <p>
+                                        <button id="btnAdd" class="btn btn-primary">Add Book</button>
+                                    </p>
+                                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.6.2.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .jumbotron{
+            padding: 50px;
+            margin: 25px;
+            color: goldenrod;
+            background-color: azure;
+            text-align: center;
+
+        }
+    </style>
+<script>
+    const url = "http://localhost:3000/Books"
+    const obj={};
+
+    function createRow(book){ //table creation
+        const row = `<tr>
+            <td>${book.bookTitle}</td>
+            <td>${book.price}</td>
+            <td>${book.author}</td>
+            <td>${book.id}</td>
+            <td> <a href="#" class="edit" info="${book.id}"/>Edit</td>
+            </tr>`
+            return row;
+    }
+
+function getElementbyid(id){
+    const tempurl=`${url}/${id}`;
+    $.get(tempurl,function(data){
+        $("#txtEid").val(data.id);
+        $("#txtEtitle").val(data.bookTitle);
+        $("#txtEauthor").val(data.author);
+        $("#txtEprice").val(data.price);
+    })
+
+    $("button:eq(0)").click(function(){
+          obj.bookTitle=$("#txtEtitle").val();
+          obj.author=$("#txtEauthor").val();
+          obj.price=$("#txtEprice").val();
+            $.ajax({"method":"PUT",
+                "url": tempurl,
+                "data":obj,
+                "success":function(data){
+                    alert("Data Edited Succesfully")
+                }})
+
+    })
+}
+
+
+    function getAllRecords(){ // get data
+        $("table").find("tr:gt(0)").remove();
+        $.get(url,function(data){
+            for(const bk of data){
+                let row = createRow(bk)
+                $("table").append(row);
+            }
+            $(".edit").click(function(){
+                const id=$(this).attr("info");
+                getElementbyid(id);
+            })
+           
+        })
+    }
+      function addBook(){//post data
+        const obj={};
+         obj.id=$("#txtId").val();
+         obj.bookTitle=$("#txtTitle").val();
+         obj.price=$("#txtPrice").val();
+         obj.author=$("#txtAuthor").val();
+         $.post(url,obj,function(data){
+             const msg=`The book ${data.bookTitle} is added`
+                alert(msg);
+                alert("THis was added");
+            })
+
+    }
+    function editBook(id){
+
+         const tempurl=url+"/"+id;
+          obj.bookTitle=$("#txtEtitle").val();
+          obj.bookauthor=$("#txtEauthor").val();
+          obj.bookPrice=$("#txtEprice").val();
+            $.ajax({"method":"PUT",
+                "url": tempurl,
+                "data":obj,
+                "success":function(data){
+                    alert("Data Edited Succesfully")
+                }})
+
+    }
+    $().ready(function(){
+        $("a.btn:first").click(getAllRecords)
+        $("button:last").click(addBook);
+
+    
+    
+        
+    })
+
+
+
+</script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="jumbotron">Book store App!!!!</h1>
+    <hr>
+
+<nav class="nav nav-bar">
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+        <a href="#" class="btn btn-outline-info m-3 p-3">All Records</a>
+        
+    </li>
+</ul>
+</nav>
+    <div class="container container-fluid text-primary">
+        <div class="row">
+            <div class="col-md-6">
+                    <header>
+                            <h2 class="h2">Books with Us!!!</h2>
+                            <hr>
+                        </header>
+                        <div>
+                            <table class="table table-bordered table-striped table-hover" border="1">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Cost</th>
+                                    <th>Author</th>
+                                    <th>Book ID</th>
+                                    <th>Option</th>
+                                </tr>
+                            </table>
+                        </div>     
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h2>
+                        Edit Book Details
+                    </h2>
+                    <hr>
+                    <div>
+                        <p>Enter Book ID: <input type="text" disabled id="txtEid" placeholder="BookID"></p>
+                        <p>
+                            Enter Book Title: <input type="text" name="" id="txtEtitle" placeholder="Book Name">
+                        </p>
+                        <p>Enter Book Author: <input type="text" name="" id="txtEauthor" placeholder="Book Author"></p>
+                        <p>
+                            Enter Book Price: <input type="text" name="" id="txtEprice" placeholder="Price"> 
+                        </p>
+                        <p><button class="btn btn-outline-primary"> Update Book</button></p>
+                    </div>
+                </div>
+                    <header>
+                            <h2> Add New Book</h2>
+                            <hr>
+                        </header>
+                        <div>
+                            <p>
+                                Enter the ID: <input id="txtId"  placeholder="ID of the Book" />
+                            </p>
+                            <p>
+                                Enter the Title: <input id="txtTitle" placeholder="Title" />
+                            </p>
+                            <p>
+                                Enter the Author: <input id="txtAuthor" placeholder="Author" />
+                            </p>
+                            <p>
+                                Enter the Price: <input id="txtPrice" placeholder="Price" />
+                            </p>
+                            <p>
+                                <button class="btn btn-outline-danger">Add Book</button>
+                            </p>
+                        </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
