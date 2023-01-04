@@ -1,0 +1,7 @@
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\bin\Debug\SampleConApp.exe.config
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\bin\Debug\SampleConApp.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\bin\Debug\SampleConApp.pdb
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\obj\Debug\SampleConApp.csprojAssemblyReference.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\obj\Debug\SampleConApp.csproj.CoreCompileInputs.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\obj\Debug\SampleConApp.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleConApp\obj\Debug\SampleConApp.pdb

@@ -1,0 +1,4 @@
+﻿Press 1 for Adding
+Press 2 for Updating
+Press 3 for Finding
+Press 4 for Deleting
