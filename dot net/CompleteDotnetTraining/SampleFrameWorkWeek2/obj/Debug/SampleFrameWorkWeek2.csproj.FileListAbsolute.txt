@@ -1,0 +1,7 @@
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\bin\Debug\SampleFrameWorkWeek2.exe.config
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\bin\Debug\SampleFrameWorkWeek2.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\bin\Debug\SampleFrameWorkWeek2.pdb
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\obj\Debug\SampleFrameWorkWeek2.csprojAssemblyReference.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\obj\Debug\SampleFrameWorkWeek2.csproj.CoreCompileInputs.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\obj\Debug\SampleFrameWorkWeek2.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleFrameWorkWeek2\obj\Debug\SampleFrameWorkWeek2.pdb
