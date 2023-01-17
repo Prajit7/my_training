@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Customer>
+    <CustomerId>1</CustomerId>
+    <Customername>Prajit</Customername>
+    <CustomerAdsress>Murdeshwar</CustomerAdsress>
+    <BillAmount>2000</BillAmount>
+  </Customer>
+  <Customer>
+    <CustomerId>2</CustomerId>
+    <Customername>Ashwin</Customername>
+    <CustomerAdsress>Bangalore</CustomerAdsress>
+    <BillAmount>1000</BillAmount>
+  </Customer>
+  <Customer>
+    <CustomerId>3</CustomerId>
+    <Customername>shrihari</Customername>
+    <CustomerAdsress>miraj</CustomerAdsress>
+    <BillAmount>1400</BillAmount>
+  </Customer>
+</NewDataSet>

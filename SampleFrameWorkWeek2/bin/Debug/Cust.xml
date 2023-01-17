@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <CustomerId>1</CustomerId>
+    <CustomerName>a</CustomerName>
+    <CustomerAddress>c</CustomerAddress>
+    <BillAmount>1</BillAmount>
+  </Customer>
+  <Customer>
+    <CustomerId>2</CustomerId>
+    <CustomerName>s</CustomerName>
+    <CustomerAddress>d</CustomerAddress>
+    <BillAmount>2</BillAmount>
+  </Customer>
+</ArrayOfCustomer>
