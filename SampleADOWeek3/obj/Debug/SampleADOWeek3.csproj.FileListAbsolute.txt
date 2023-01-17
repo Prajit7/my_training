@@ -1,0 +1,10 @@
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\bin\Debug\SampleADOWeek3.exe.config
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\bin\Debug\SampleADOWeek3.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\bin\Debug\SampleADOWeek3.pdb
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\bin\Debug\SampleLib.dll
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\bin\Debug\SampleLib.pdb
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\obj\Debug\SampleADOWeek3.csprojAssemblyReference.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\obj\Debug\SampleADOWeek3.csproj.CoreCompileInputs.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\obj\Debug\SampleADOWeek3.csproj.CopyComplete
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\obj\Debug\SampleADOWeek3.exe
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleADOWeek3\obj\Debug\SampleADOWeek3.pdb
