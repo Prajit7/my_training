@@ -1,0 +1,11 @@
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\SampleLib.dll.config
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\SampleLib.dll
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\SampleLib.pdb
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\EntityFramework.dll
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\EntityFramework.SqlServer.dll
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\EntityFramework.xml
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\bin\Debug\EntityFramework.SqlServer.xml
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\obj\Debug\SampleLib.csproj.CoreCompileInputs.cache
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\obj\Debug\SampleLib.csproj.CopyComplete
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\obj\Debug\SampleLib.dll
+D:\Prajit_3328\dot net\CompleteDotnetTraining\SampleLib\obj\Debug\SampleLib.pdb
