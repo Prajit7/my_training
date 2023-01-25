@@ -1,0 +1,62 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSheet.master.cs" Inherits="SampleWebApp.MasterSheet" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Content/jquery-3.6.2.min.js"></script> 
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <h1>Welcome!!!</h1>
+                <p>Click the links to know the features</p>
+                <hr />
+                <asp:Menu runat="server" Orientation="Horizontal">
+                    <Items> 
+                        <asp:MenuItem Text="Home" NavigateUrl="~/HomePage.aspx"/>
+                        <asp:MenuItem Text="Calc Program" NavigateUrl="~/Ex01Calc.aspx" />
+                        <asp:MenuItem Text="Entity Class" NavigateUrl="~/Product.aspx"/>
+                        <asp:MenuItem Text="DataBase App" NavigateUrl="~/ProductsAppUsingDll.aspx" />
+                        <asp:MenuItem Text="Validations" NavigateUrl="~/validation.aspx" />
+                       <asp:MenuItem Text="State Management">
+                           <asp:MenuItem Text="MainPage" />
+                           <asp:MenuItem Text="Recipiant Page" />
+                           <asp:MenuItem Text="Shopping Cart" />
+                       </asp:MenuItem>
+                       <asp:MenuItem Text="Caching" />
+                       <asp:MenuItem Text="Login Controls" />
+                    </Items>
+                </asp:Menu>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <asp:ContentPlaceHolder runat="server" ID="mainContent">
+
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="col-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                           <%--<asp:AdRotator Width="100%" Height="150px" AdvertisementFile="" runat="server" />--%> 
+                       </div>
+                        <div class="row">
+                            <asp:Calendar runat="server" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p style="text-align:center">
+                    <i>Copyrights</i>
+                </p>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>
