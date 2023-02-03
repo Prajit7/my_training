@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="NewsDes">
+  <DataContextMoniker Name="/NewsDesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="923b444c-8605-43c5-96ab-42370b5f283d" absoluteBounds="4, 2.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/NewsDesDataContext/newsinfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fde7f4c8-46f3-4ddf-aa7e-dc2802ba558d" absoluteBounds="4.0150000000000006, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,80 @@
+﻿@model SampleMvcApp.DataComponent.CARINFO
+
+@{
+    ViewBag.Title = "AddCar";
+}
+
+
+<h2>ADD NEW CAR TO COLLECTION!!</h2>
+
+<hr />
+    @using (Html.BeginForm())
+    {
+<div>
+    <p>
+        Car ID: @Html.EditorFor(m => m.ENTRYID, new { @class = "form-control" })
+    </p>
+
+</div>
+<div>
+    <p>
+        Car Brand Name: @Html.EditorFor(m => m.BRANDNAME, new { @class = "form-control" })
+    </p>
+
+</div>
+<div>
+    <p>
+        Car Model: @Html.EditorFor(m => m.MODEL, new { @class = "form-control" })
+    </p>
+
+</div>
+<div>
+    <p>
+        Car Body: @Html.EditorFor(m => m.BODYTYPE, new { @class = "form-control" })
+    </p>
+
+</div>
+
+<div>
+    <p>
+        Car Type: Fuel Type: @Html.DropDownListFor((m) => m.FUELTYPE, new List<SelectListItem>
+{
+new SelectListItem{ Text = "HATCHBACK"},
+new SelectListItem{ Text = "SEDAN"},
+new SelectListItem{ Text = "SUV"},
+new SelectListItem{ Text = "MUV"}
+},new { @class = "form-control" } );
+
+</div>
+<div>
+    <p>
+        Engine: @Html.EditorFor(m => m.ENGINE, new { @class = "form-control" })
+    </p>
+
+</div>
+<div>
+    <p>
+        Seats: @Html.EditorFor(m => m.CAPACITY, new { @class = "form-control" })
+    </p>
+
+</div>
+
+<div>
+    <p>
+        Fuel Type: @Html.DropDownListFor((m) => m.FUELTYPE, new List<SelectListItem>
+  {
+      new SelectListItem{ Text = "Petrol"},
+      new SelectListItem{ Text = "Diesel"},
+      new SelectListItem{ Text = "Hybrid"},
+      new SelectListItem{ Text = "Electric"}
+  },new { @class = "form-control" } );
+    </p>
+
+</div>
+<div>
+
+    <button type="submit" class="btn btn-group-sm"> Add Details</button>
+</div>
+    }
+
+
