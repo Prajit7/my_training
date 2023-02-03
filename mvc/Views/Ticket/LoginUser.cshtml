@@ -1,0 +1,31 @@
+﻿@model MVCApp.DataComponent.ticketAdmin
+
+@{
+    ViewBag.Title = "LoginUser";
+}
+@if (ViewBag.Message != null)
+{
+    <p style="color:red">
+        @ViewBag.Message
+    </p>
+}
+<h2>Admin Login</h2>
+@using (Html.BeginForm("LoginUser", "Ticket"))
+{
+    <div>
+        <p>
+            UserName : @Html.Editor("username", new { @class = "form-control" })
+        </p>
+    </div>
+    <div>
+        <p>
+            Password : @Html.Editor("password", new { @class = "form-control" })
+        </p>
+    </div>
+    <div>
+
+        <button type="submit">Login</button>
+    </div>
+
+}
+

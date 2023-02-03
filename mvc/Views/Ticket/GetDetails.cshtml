@@ -1,0 +1,35 @@
+﻿@model List<MVCApp.DataComponent.ticketsystem>
+
+@{
+    ViewBag.Title = "GetDetails";
+}
+<h2>List of Ticket Raised!!</h2>
+<div>
+    <table class="table table-bordered table-hover table-striped">
+        <tr>
+            <td>Ticket ID</td>
+            <td>Employee ID</td>
+            <td>Employee Name</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Status</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+     <tr>
+         <td>@item.TicketNo</td>
+         <td>@item.EmpId</td>
+         <td>@item.EmpName</td>
+         <td>@item.Title</td>
+         <td>@item.TicketDescription</td>
+         <td>
+             @Html.ActionLink("Resolved", "Delete", new { id = item.TicketNo }, new { @class = "btn btn-primary" })
+            
+         </td>
+         
+     </tr>
+        }
+
+    </table>
+</div>
+

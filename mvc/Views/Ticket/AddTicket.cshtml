@@ -1,0 +1,38 @@
+﻿@model MVCApp.DataComponent.ticketsystem
+
+@{
+    ViewBag.Title = "AddTicket";
+}
+
+
+
+<h2>AddTicket</h2>
+<hr />
+@using (Html.BeginForm())
+{
+<div>
+    <p>
+       Employee ID : @Html.EditorFor(m => m.EmpId, new { @class = "form-control" })
+    </p>
+</div>
+<div>
+    <p>
+        Employee Name : @Html.EditorFor(m => m.EmpName, new { @class = "form-control" })
+    </p>
+</div>
+<div>
+    <p>
+        Problem : @Html.EditorFor(m => m.Title, new { @class = "form-control" })
+    </p>
+</div>
+<div>
+    <p>
+        Problem Descriptipn : @Html.EditorFor(m => m.TicketDescription, new { @class = "form-control" })
+    </p>
+</div>
+<div>
+
+    <button type="submit" class="btn btn-group-sm"> Register Complaint</button>
+</div>
+}
+
