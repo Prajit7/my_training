@@ -1,0 +1,21 @@
+
+<div class="container">
+<div class="row">
+    
+   
+    <div class="card" style="width: 18rem;" *ngFor="let prd of products">
+        <img [src]="prd.pic" width="100%">
+        <div class="card-body">
+            <h5 class="card-title">{{prd.id}}</h5>
+            <p class="card-text">{{prd.name}}</p>
+            <a href="#" class="btn btn-primary" (click)="onEdit(prd)">Details</a>
+            
+        </div>
+        
+      </div>
+      
+   </div>
+   <app-product-details [selectedPrd]="selectedPrd" class="col-md-6" ></app-product-details>
+ 
+</div>
+
