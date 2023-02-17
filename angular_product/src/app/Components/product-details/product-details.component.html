@@ -1,0 +1,14 @@
+<div *ngIf="selectedPrd.name">
+    <h2>Details</h2>
+    <div class="container">
+        <p>
+            <input disabled [(ngModel)]="selectedPrd.id"/>
+        </p>
+        <p>
+            <input disabled [(ngModel)]="selectedPrd.name"/>
+        </p>
+        <p>
+            <input disabled [(ngModel)]="selectedPrd.price"/>
+        </p>
+    </div>
+</div>
