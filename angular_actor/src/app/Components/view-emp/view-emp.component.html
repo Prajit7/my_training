@@ -1,0 +1,29 @@
+<h2>Details of {{foundEmp.empName}}</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <img [src]="foundEmp.empPic" width="100%" height="100%"/>
+                </div>
+                <div class="col-sm-7">
+                    <p>
+                        <input disabled type="text" [(ngModel)]="foundEmp.id">
+                    </p>
+                    <p>
+                        <input disabled type="text" [(ngModel)]="foundEmp.empName">
+                    </p>
+                    <p>
+                        <input disabled type="text" [(ngModel)]="foundEmp.empAddress">
+                    </p>
+                    <p>
+                        <input  disabled type="text" [(ngModel)]="foundEmp.empPhone">
+                    </p>
+                </div>
+                <button routerLink="/" class="btn btn-primary" width="100%">Back</button>
+            </div>
+        </div>
+    </div>
+</div>
+
